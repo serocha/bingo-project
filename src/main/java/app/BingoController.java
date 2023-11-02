@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.text.Font;
 
-public class BingoController {
+public class BingoController {  // controller for the GUI and backend
     @FXML
     private TilePane playingBoard;
 
