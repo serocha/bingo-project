@@ -1,4 +1,4 @@
-package app.app;
+package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,11 @@ import java.io.IOException;
 public class BingoApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(BingoApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(BingoApp.class.getResource("bingo-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+
+        stage.setTitle("Animal Bingo");
         stage.setScene(scene);
         stage.show();
     }
