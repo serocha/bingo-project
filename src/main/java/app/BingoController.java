@@ -1,26 +1,57 @@
 package app;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
+import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
-import javafx.scene.text.Font;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BingoController {  // controller for the GUI and backend
     @FXML
     private TilePane playingBoard;
 
-    public void initialize() {
+    private final ArrayList<String> images = new ArrayList<>(Arrays.asList(
+            "antelope", "bear", "bird", "bunny", "cat",
+            "chameleon", "cheetah", "cobra", "coral-snake", "dog",
+            "elephant", "gecko", "giraffe", "goldfish", "guinea-pig",
+            "hedgehog", "horse", "llama", "owl", "raven",
+            "rhino", "shark", "sheep", "turtle", "whale", "zebra"
+    ));
+
+    public ImageView addImageToPane(String imageName) {
+        try {
+            String imagePath = "images/"+imageName+".png";  // Get the image file path
+            File file = new File(imagePath);  // Create an Image object
+            Image image = new Image(file.toURI().toString());
+
+            ImageView imageView =  new ImageView(image);
+            imageView.setFitWidth(90);
+            imageView.setFitHeight(90);
+            return imageView;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ImageView();
+    }
+
+    public void initialize() {  // creating cells, could create a custom class extending Pane if needed
+
         for (int i=1; i<26; i++) {
-            Pane pane = new Pane();
+            StackPane pane = new StackPane();
             pane.getStyleClass().add("cell");
             pane.setId("cell-" + i);
+            pane.setAlignment(Pos.CENTER);
             if (i == 13) {
-                Label label = new Label("FREE");
-                label.layoutXProperty().bind(pane.widthProperty().subtract(label.widthProperty()).divide(2));
-                label.layoutYProperty().bind(pane.heightProperty().subtract(label.heightProperty()).divide(2));
-                label.setFont(new Font(20));
-                pane.getChildren().add(label);
+                pane.getChildren().add(addImageToPane("star"));
+                pane.getStyleClass().add("cell-selected");
+            } else {
+                pane.getChildren().add(addImageToPane(images.get(i)));
             }
             playingBoard.getChildren().add(pane);
         }

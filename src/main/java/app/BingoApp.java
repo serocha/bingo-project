@@ -11,8 +11,9 @@ public class BingoApp extends Application {  // the main application
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BingoApp.class.getResource("bingo-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 650, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
 
         stage.setTitle("Animal Bingo");
         stage.setScene(scene);
