@@ -1,0 +1,52 @@
+
+.main-panel {  /* the entire container */
+    -fx-padding: 4px;
+    -fx-background-color: lightgray;
+}
+
+.playing-area {
+    -fx-background-color: lightblue;
+    -fx-border-color: black;
+    -fx-border-width: 4px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+
+#title {
+    -fx-text-fill: #ad1919;
+    -fx-font-size: 62px;
+    -fx-font-family: Agbalumo;
+    -fx-font-weight: bold;
+    -fx-font-smoothing-type: antialiased;
+    -fx-text-alignment: CENTER;
+}
+
+.board {  /* the playing board */
+    -fx-padding: 16px;
+    -fx-pref-columns: 5;
+    -fx-pref-rows: 6;
+    -fx-vgap: 8px;
+    -fx-hgap: 8px;
+}
+
+.cell {  /* bingo cells */
+    -fx-pref-height: 100px;
+    -fx-pref-width: 100px;
+    -fx-border-width: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #3e3eb2;
+    -fx-background-color: #e7e7e7;
+    -fx-background-radius: 8px;
+}
+
+.cell-selected, .cell:hover {
+    -fx-background-color: whitesmoke;
+    -fx-border-color: green;
+    -fx-border-width: 6px;
+    -fx-cursor: hand;
+    -fx-max-width: 102px;
+    -fx-max-height: 102px;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
