@@ -4,8 +4,7 @@
     -fx-background-color: lightgray;
 }
 
-.playing-area {
-    -fx-background-color: lightblue;
+.card {
     -fx-border-color: black;
     -fx-border-width: 4px;
     -fx-border-radius: 16px;
@@ -13,7 +12,23 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
 }
 
-#title {
+.blue {
+    -fx-background-color: lightblue;
+}
+
+.red {
+    -fx-background-color: red;
+}
+
+.yellow {
+    -fx-background-color: yellow;
+}
+
+.green {
+    -fx-background-color: lightgreen;
+}
+
+.title {
     -fx-text-fill: #ad1919;
     -fx-font-size: 62px;
     -fx-font-family: Agbalumo;
@@ -49,4 +64,43 @@
     -fx-max-height: 102px;
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
+}
+
+.tab-wrapper {
+    -fx-translate-y: 50px;
+    -fx-pref-height: 100px;
+}
+
+.tab {
+    -fx-translate-x: -27px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 95px;
+    -fx-background-radius: 18px 18px 0 0;
+    -fx-border-color: black;
+    -fx-border-style: solid solid none solid;
+    -fx-border-width: 4px;
+    -fx-border-radius: 16px 16px 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, -4);
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-rotate: 90;
+    -fx-font-size: 18px;
+    -fx-font-family: Agbalumo;
+    -fx-font-smoothing-type: antialiased;
+    -fx-alignment: CENTER;
+}
+
+.tab:hover {
+    -fx-cursor: hand;
+    -fx-border-color: white;
+    -fx-text-fill: whitesmoke;
+}
+
+.selected {
+    -fx-text-fill: #e0e0e0;
+    -fx-border-color: #e0e0e0;
+}
+
+.unselected {
+    -fx-text-fill: black;
+    -fx-border-color: black;
 }
