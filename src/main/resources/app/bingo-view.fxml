@@ -5,25 +5,26 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 
 <FlowPane fx:id="root" styleClass="main-panel" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
           fx:controller="app.BingoController">
     <StackPane>
         <FlowPane fx:id="card1" styleClass="card, blue" alignment="CENTER">
             <Label styleClass="title" text="B I N G O"/>
-            <TilePane fx:id="board1" styleClass="board"/>
+            <TilePane fx:id="boardGUI_1" styleClass="board"/>
         </FlowPane>
         <FlowPane fx:id="card2" styleClass="card, red" alignment="CENTER">
             <Label styleClass="title" text="B I N G O"/>
-            <TilePane fx:id="board2" styleClass="board"/>
+            <TilePane fx:id="boardGUI_2" styleClass="board"/>
         </FlowPane>
         <FlowPane fx:id="card3" styleClass="card, yellow" alignment="CENTER">
             <Label styleClass="title" text="B I N G O"/>
-            <TilePane fx:id="board3" styleClass="board"/>
+            <TilePane fx:id="boardGUI_3" styleClass="board"/>
         </FlowPane>
         <FlowPane fx:id="card4" styleClass="card, green" alignment="CENTER">
             <Label styleClass="title" text="B I N G O"/>
-            <TilePane fx:id="board4" styleClass="board"/>
+            <TilePane fx:id="boardGUI_4" styleClass="board"/>
         </FlowPane>
     </StackPane>
     <VBox>
@@ -38,6 +39,12 @@
         </VBox>
         <VBox styleClass="tab-wrapper">
             <Label fx:id="tab4" styleClass="tab" text="CARD  D" onMouseClicked="#selectBoard" />
+        </VBox>
+        <VBox styleClass="btn-wrapper">
+            <Button fx:id="updateButton" styleClass="update-btn" text="Next Animal!" onAction="#update" />
+        </VBox>
+        <VBox styleClass="win-wrapper">
+            <Label fx:id="winLabel" styleClass="win-label" />
         </VBox>
     </VBox>
 </FlowPane>
